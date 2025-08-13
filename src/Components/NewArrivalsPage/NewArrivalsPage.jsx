@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../../context/CartContext1';
+import { useCart } from '../../Context/CartContext1.jsx';
 
 import 'react-toastify/dist/ReactToastify.css';
 import img5 from '../../../images/img5.png';

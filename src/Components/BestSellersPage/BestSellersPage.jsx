@@ -6,7 +6,7 @@ import best3 from '../../../images/best3.png';
 import best4 from '../../../images/best4.png';
 
 import toast from 'react-hot-toast';
-import { useCart } from '../../Context/CartContext1';
+import { useCart } from '../../Context/CartContext1.jsx';
 
 export default function BestSellersPage() {
   const { addToCart } = useCart();

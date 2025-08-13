@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../../Context/CartContext1'; // عدل حسب مسار الـ context الحقيقي
+import { useCart } from '../../Context/CartContext1.jsx';
 import img1 from '../../../images/prod1.png';
 
 const trendingProducts = [
