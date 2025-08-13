@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import toast from 'react-hot-toast';
-import { useCart } from '../../context/CartContext1';
+import { useCart } from '../../Context/CartContext1.jsx';
 
 const disposableProducts = [
   {

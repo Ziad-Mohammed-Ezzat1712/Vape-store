@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useCart } from '../../Context/CartContext1';
+import { useCart } from '../../Context/CartContext1.jsx';
 import toast from 'react-hot-toast';
 
 // بيانات لكل كاتيجوري منتجات (كمثال)

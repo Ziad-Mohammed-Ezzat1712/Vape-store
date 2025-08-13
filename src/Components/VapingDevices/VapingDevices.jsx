@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { useCart } from '../../Context/CartContext1';
+import { useCart } from '../../Context/CartContext1.jsx';
 import toast from 'react-hot-toast';
 
 const devices = [
