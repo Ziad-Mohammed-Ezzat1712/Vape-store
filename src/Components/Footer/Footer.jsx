@@ -11,6 +11,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex flex-col gap-4 items-start">
             <img src={logo} alt="Logo" className="h-20 w-40 object-contain" />
+           
           </div>
 
           {/* Need Help */}
