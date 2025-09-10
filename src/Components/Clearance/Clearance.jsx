@@ -6,25 +6,25 @@ const clearanceProducts = [
   {
     id: 'clear1',
     name: 'SMOK Starter Kit - Clearance',
-    price: '750 EGP',
+    price: 750 ,
     image: 'https://cdn11.bigcommerce.com/s-og5cwbhm/images/stencil/1280x1280/products/5460/20234/SMOK_Vape_Pen_V2_Pen_Kits__49289.1627130123.jpg?c=2',
   },
   {
     id: 'clear2',
     name: 'GeekVape Coil Pack - Clearance',
-    price: '100 EGP',
+    price: 100 ,
     image: 'https://lavaporwholesale.com/cdn/shop/files/image_2024_02_20T00_15_52_028Z_1.png?v=1708535488',
   },
   {
     id: 'clear3',
     name: 'Vape Battery Charger - Clearance',
-    price: '70 EGP',
+    price:70 ,
     image: 'https://cdn11.bigcommerce.com/s-og5cwbhm/images/stencil/290x360/products/4121/14750/Xtar_VC2_Charger_Lead__46260.1554715208.jpg?c=2',
   },
   {
     id: 'clear4',
     name: 'Berry Blast E-Liquid - Clearance',
-    price: '200 EGP',
+    price: 200 ,
     image: 'https://cdn.vapeclub.co.uk/img/products/berry-blast-e-liquid-by-doozy-vape-co.jpg',
   },
 ];
@@ -58,7 +58,7 @@ export default function Clearance() {
             />
             <div className="text-left flex-1">
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-              <p className="text-white font-semibold text-lg">{product.price}</p>
+              <p className="text-white font-semibold text-lg">{product.price} EGP</p>
             </div>
             <button
               onClick={() => handleAddToCart(product)}

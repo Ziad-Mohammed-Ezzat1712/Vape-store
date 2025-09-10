@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useCart } from '../../Context/CartContext1.jsx';
 import toast from 'react-hot-toast';
 
@@ -9,13 +9,13 @@ const productsByBrand = {
     {
       id: 1,
       title: 'Vape Station Mango Blast | 60ml | 3mg',
-      price: ' 250 EGP',
+      price: 250,
       image: 'https://example.com/products/vape-station-mango.png',
     },
     {
       id: 2,
       title: 'Vape Station Blueberry Rush | 60ml | 6mg',
-      price: ' 270 EGP',
+      price:  270 ,
       image: 'https://example.com/products/vape-station-blueberry.png',
     },
   ],
@@ -23,13 +23,13 @@ const productsByBrand = {
     {
       id: 3,
       title: 'Splash Vape Citrus Mix | 60ml | 3mg',
-      price: ' 260 EGP',
+      price: 260 ,
       image: 'https://example.com/products/splash-vape-citrus.png',
     },
     {
       id: 4,
       title: 'Splash Vape Mint Breeze | 60ml | 6mg',
-      price: ' 280 EGP',
+      price:  280 ,
       image: 'https://example.com/products/splash-vape-mint.png',
     },
   ],
@@ -37,13 +37,13 @@ const productsByBrand = {
     {
       id: 5,
       title: '8-Ball Classic Tobacco | 60ml | 3mg',
-      price: ' 240 EGP',
+      price:  240 ,
       image: 'https://example.com/products/8-ball-tobacco.png',
     },
     {
       id: 6,
       title: '8-Ball Watermelon | 60ml | 6mg',
-      price: ' 255 EGP',
+      price: 255 ,
       image: 'https://example.com/products/8-ball-watermelon.png',
     },
   ],
@@ -51,7 +51,7 @@ const productsByBrand = {
     {
       id: 7,
       title: 'PLUS 18 Liquid Strawberry | 60ml | 3mg',
-      price: ' 260 EGP',
+      price:  260,
       image: 'https://example.com/products/plus18-strawberry.png',
     },
   ],
@@ -59,13 +59,13 @@ const productsByBrand = {
     {
       id: 8,
       title: 'Prestige E-Liquid Vanilla Custard | 60ml | 3mg',
-      price: ' 275 EGP',
+      price: 275 ,
       image: 'https://example.com/products/prestige-vanilla.png',
     },
     {
       id: 9,
       title: 'Prestige E-Liquid Mango Tango | 60ml | 6mg',
-      price: ' 290 EGP',
+      price: 290 ,
       image: 'https://example.com/products/prestige-mango.png',
     },
   ],
@@ -73,7 +73,7 @@ const productsByBrand = {
     {
       id: 10,
       title: 'UNO E-Liquid Berry Blast | 60ml | 3mg',
-      price: ' 250 EGP',
+      price: 250 ,
       image: 'https://example.com/products/uno-berry.png',
     },
   ],
@@ -81,7 +81,7 @@ const productsByBrand = {
     {
       id: 11,
       title: 'Elephant Ejuice Cola | 60ml | 3mg',
-      price: ' 265 EGP',
+      price:  265 ,
       image: 'https://example.com/products/elephant-cola.png',
     },
   ],
@@ -89,7 +89,7 @@ const productsByBrand = {
     {
       id: 12,
       title: 'Eagle E-Liquid Menthol | 60ml | 3mg',
-      price: ' 270 EGP',
+      price: 270 ,
       image: 'https://example.com/products/eagle-menthol.png',
     },
   ],
@@ -121,14 +121,16 @@ export default function ProductsELiquids() {
             key={product.id}
             className="bg-[#111] p-4 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300 flex flex-col"
           >
+            <Link to={`/product/${product.id}`}>
             <img
               src={product.image}
               alt={product.title}
               className="mx-auto mb-4 h-48 object-contain"
             />
+            </Link>
             <div className="text-left flex-1">
               <p className="text-base text-white font-medium mb-2 line-clamp-2">{product.title}</p>
-              <span className="text-[#FD0000] font-semibold text-lg">{product.price}</span>
+              <span className="text-[#FD0000] font-semibold text-lg">{product.price} EGP</span>
             </div>
 
             <button

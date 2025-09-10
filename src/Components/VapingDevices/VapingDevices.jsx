@@ -103,7 +103,7 @@ export default function VapingDevices() {
             />
             <h3 className="text-xl font-semibold mb-2">{device.name}</h3>
             <p className="text-gray-300 mb-2">${device.price.toFixed(2)}</p>
-            <div className="flex items-center mb-4">
+            <div className="flex justify-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <FaStar
                   key={i}

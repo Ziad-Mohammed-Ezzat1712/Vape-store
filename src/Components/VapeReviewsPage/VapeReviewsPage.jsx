@@ -69,15 +69,15 @@ export default function VapeReviewsPage() {
         {reviews.map((item) => (
           <div
             key={item.id}
-            className="bg-[#111] p-6 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300"
+            className="bg-[#111] p-6 rounded-lg border border-gray-700 hover:shadow-lg space-y-4 transition duration-300"
           >
             <img
               src={item.image}
               alt={item.product}
               className="w-full h-40 object-contain mb-4"
             />
-            <h2 className="text-xl font-semibold mb-2">{item.product}</h2>
-            <div className="flex text-yellow-400 mb-3">
+            <h2 className="text-xl font-semibold mb-2 ">{item.product}</h2>
+            <div className="flex text-yellow-400 mb-3 justify-center">
               {Array(item.rating)
                 .fill()
                 .map((_, i) => (

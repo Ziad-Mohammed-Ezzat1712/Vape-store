@@ -13,10 +13,10 @@ export default function BestSellersPage() {
   const [loadingId, setLoadingId] = useState(null);
 
   const products = [
-    { id: 1, brand: 'JOOS', title: 'Tango Twist Freeze by Voodoo Joos Salt Series 30mL', price: '300 EGP', image: best1 },
-    { id: 2, brand: 'RUTHLESS', title: 'Cherry Drank by Ruthless Series 120ml', price: '250 EGP', image: best2 },
-    { id: 3, brand: 'ORGNX', title: 'ORGNX Disposable | 4000 puffs | 9mL | 5%', price: 'From 200 EGP', image: best3 },
-    { id: 4, brand: 'GEEKVAPE', title: 'Geekvape Obelisk 65 Kit', price: 'From 200 EGP', image: best4 },
+    { id: 1, brand: 'JOOS', title: 'Tango Twist Freeze by Voodoo Joos Salt Series 30mL', price: 300, image: best1 },
+    { id: 2, brand: 'RUTHLESS', title: 'Cherry Drank by Ruthless Series 120ml', price: 250 , image: best2 },
+    { id: 3, brand: 'ORGNX', title: 'ORGNX Disposable | 4000 puffs | 9mL | 5%', price:  200 , image: best3 },
+    { id: 4, brand: 'GEEKVAPE', title: 'Geekvape Obelisk 65 Kit', price:  200 , image: best4 },
   ];
 
   const handleAdd = (product) => {
@@ -38,11 +38,11 @@ export default function BestSellersPage() {
             <div className="text-left">
               <h4 className="text-sm text-gray-400 mb-2">{product.brand}</h4>
               <p className="text-base text-white font-medium mb-2 line-clamp-2">{product.title}</p>
-              <span className="text-[#FD0000] font-semibold text-lg block mb-4">{product.price}</span>
+              <span className="text-[#FD0000] font-semibold text-lg block mb-4">{product.price} EGP</span>
               <button
                 onClick={() => handleAdd(product)}
                 disabled={loadingId === product.id}
-                className="w-full bg-[#FD0000] hover:bg-red-700 text-white py-2 rounded"
+                className="w-full bg-[#FD0000]  hover:bg-red-700 text-white py-2 rounded"
               >
                 {loadingId === product.id ? 'Adding...' : 'Add to Cart'}
               </button>

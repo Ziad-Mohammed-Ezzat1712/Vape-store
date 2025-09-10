@@ -1,26 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from "../../../public/logo.png";
-import { UserContext } from '../../Context/UserContext';
-import { WishListContext } from '../../Context/WishListContext';
+
 import { useCart } from '../../Context/CartContext1';
 import PromoSlider from '../CategoriesSlider/PromoSlider';
 
 export default function Navbar() {
   const { totalItems } = useCart();
-  const { userLogin, setuserLogin } = useContext(UserContext);
-  const { setNumItem2, NumItem2 } = useContext(WishListContext);
 
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
-
-  function signout() {
-    localStorage.removeItem("userToken");
-    setuserLogin(null);
-    navigate("/login");
-  }
 
   function handleSearch(e) {
     e.preventDefault();
@@ -94,14 +85,8 @@ export default function Navbar() {
 
           <div className="hidden md:flex w-full md:w-auto justify-center md:justify-end">
             <ul className="flex gap-4 items-center">
-              {userLogin ? (
-                <li><span onClick={signout} className="cursor-pointer font-semibold">Signout</span></li>
-              ) : (
-                <>
-                  <li><NavLink to="login" className={navLinkClass}>Login</NavLink></li>
-                  <li><NavLink to="register" className={navLinkClass}>Register</NavLink></li>
-                </>
-              )}
+              <li><NavLink to="login" className={navLinkClass}>Login</NavLink></li>
+              <li><NavLink to="register" className={navLinkClass}>Register</NavLink></li>
               <NavLink className="text-white relative hover:text-white" to="cart">
                 <i className="fa-solid fa-cart-shopping"></i>
                 <div className="absolute top-[-13px] right-[-15px] flex items-center justify-center size-5 rounded-full bg-red-600 text-white text-xs font-bold">
@@ -115,14 +100,8 @@ export default function Navbar() {
         {menuOpen && (
           <div className="md:hidden bg-black text-white text-left px-4 py-3 space-y-4">
             <ul className="space-y-2 text-sm">
-              {userLogin ? (
-                <li><span onClick={signout} className="cursor-pointer font-semibold block">Signout</span></li>
-              ) : (
-                <>
-                  <li><NavLink to="/login" className={navLinkClass}>Login</NavLink></li>
-                  <li><NavLink to="/register" className={navLinkClass}>Register</NavLink></li>
-                </>
-              )}
+              <li><NavLink to="/login" className={navLinkClass}>Login</NavLink></li>
+              <li><NavLink to="/register" className={navLinkClass}>Register</NavLink></li>
               <li>
                 <NavLink className="relative inline-block hover:text-red-500 text-white font-semibold" to="/cart">
                   <i className="fa-solid fa-cart-shopping"></i>

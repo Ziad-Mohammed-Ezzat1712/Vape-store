@@ -3,12 +3,12 @@ import { useFormik } from 'formik'
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import * as yup from "yup"
-import { UserContext } from '../../Context/UserContext';
+
 
 
 
 export default function Register() {
-  let {userLogin,setuserLogin}=useContext(UserContext)
+
 const [errorMessage, seterrorMessage] = useState("")
 const [isLoading, setisLoading] = useState(false)
   let navigate = useNavigate()

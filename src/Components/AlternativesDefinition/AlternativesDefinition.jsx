@@ -7,25 +7,25 @@ const alternativesProducts = [
   {
     id: 'alt1',
     name: 'Vape Alternative Device A',
-    price: '850 EGP',
+    price: 850 ,
     image: 'https://example.com/images/alt-device-a.jpg',
   },
   {
     id: 'alt2',
     name: 'Alternative E-Liquid Flavor X',
-    price: '270 EGP',
+    price: 270 ,
     image: 'https://example.com/images/alt-eliquid-x.jpg',
   },
   {
     id: 'alt3',
     name: 'Vape Alternative Device B',
-    price: '920 EGP',
+    price: 920 ,
     image: 'https://example.com/images/alt-device-b.jpg',
   },
   {
     id: 'alt4',
     name: 'Alternative Pod System Z',
-    price: '680 EGP',
+    price: 680 ,
     image: 'https://example.com/images/alt-pod-z.jpg',
   },
 ];
@@ -59,7 +59,7 @@ export default function Alternatives() {
             />
             <div className="text-left flex-1">
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-              <p className="text-white font-semibold text-lg">{product.price}</p>
+              <p className="text-white font-semibold text-lg">{product.price} EGP</p>
             </div>
             <button
               onClick={() => handleAddToCart(product)}

@@ -13,10 +13,10 @@ export default function NewArrivalsPage() {
   const [loadingId, setLoadingId] = useState(null); // لتحديد الزر اللي بيعمل لودينج
 
   const products = [
-    { id: 1, brand: 'DKHAAN', title: 'Dkhaan Infinity Portable Hookah Nest', price: 'From 200 EGP', image: img5 },
-    { id: 2, brand: 'SMYLE LABS', title: 'Smyle (DSPLY 20pc)(510BATT) Mini Plug', price: 'From 1000 EGP', image: img6 },
-    { id: 3, brand: 'SMYLE LABS', title: 'Smyle (510BATT) Wandjamin Cart', price: 'From 350 EGP', image: img7 },
-    { id: 4, brand: 'SMYLE LABS', title: 'Smyle (Lighter) Fyre Saber Shaped Torch', price: 'From 150 EGP', image: img8 },
+    { id: 1, brand: 'DKHAAN', title: 'Dkhaan Infinity Portable Hookah Nest', price:  200 , image: img5 },
+    { id: 2, brand: 'SMYLE LABS', title: 'Smyle (DSPLY 20pc)(510BATT) Mini Plug', price: 1000 , image: img6 },
+    { id: 3, brand: 'SMYLE LABS', title: 'Smyle (510BATT) Wandjamin Cart', price:  350 , image: img7 },
+    { id: 4, brand: 'SMYLE LABS', title: 'Smyle (Lighter) Fyre Saber Shaped Torch', price: 150 , image: img8 },
   ];
 
   const handleAddToCart = (product) => {
@@ -43,7 +43,7 @@ export default function NewArrivalsPage() {
             <div className="text-left mb-4">
               <h4 className="text-sm text-gray-400 mb-2">{product.brand}</h4>
               <p className="text-base text-white font-medium mb-2">{product.title}</p>
-              <span className="text-[#FD0000] font-semibold text-lg">{product.price}</span>
+              <span className="text-[#FD0000] font-semibold text-lg">{product.price} EGP</span>
             </div>
             <button
               onClick={() => handleAddToCart(product)}
