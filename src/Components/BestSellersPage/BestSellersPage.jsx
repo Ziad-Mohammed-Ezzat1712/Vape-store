@@ -4,9 +4,9 @@ import best1 from '../../../images/best1.png';
 import best2 from '../../../images/best2.png';
 import best3 from '../../../images/best3.png';
 import best4 from '../../../images/best4.png';
-
 import toast from 'react-hot-toast';
 import { useCart } from '../../Context/CartContext1.jsx';
+import { Link } from 'react-router-dom';
 
 export default function BestSellersPage() {
   const { addToCart } = useCart();
@@ -25,7 +25,7 @@ export default function BestSellersPage() {
       addToCart(product);
       setLoadingId(null);
       toast.success(`${product.title} added to cart`);
-    }, 800); // محاكاة لوقت التحميل
+    }, 800); 
   };
 
   return (
@@ -34,7 +34,13 @@ export default function BestSellersPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <div key={product.id} className="bg-[#111] p-4 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300">
+              <Link 
+  to={`/product/${product.id}`}
+  state={{ productsArray: products }}  
+>
+            
             <img src={product.image} alt={product.title} className="mx-auto mb-4 h-48 object-contain" />
+           </Link> 
             <div className="text-left">
               <h4 className="text-sm text-gray-400 mb-2">{product.brand}</h4>
               <p className="text-base text-white font-medium mb-2 line-clamp-2">{product.title}</p>

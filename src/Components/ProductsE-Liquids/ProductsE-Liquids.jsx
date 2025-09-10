@@ -121,7 +121,10 @@ export default function ProductsELiquids() {
             key={product.id}
             className="bg-[#111] p-4 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300 flex flex-col"
           >
-            <Link to={`/product/${product.id}`}>
+            <Link 
+             to={`/product/${product.id}`}
+             state={{ productsArray: products  }}  
+           >
             <img
               src={product.image}
               alt={product.title}

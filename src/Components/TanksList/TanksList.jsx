@@ -1,55 +1,56 @@
 import React, { useState } from 'react';
 import { useCart } from '../../Context/CartContext1.jsx';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const tanks = [
   {
     id: 'tank1',
-    name: 'GeekVape Zeus Sub Ohm',
+    title: 'GeekVape Zeus Sub Ohm',
     price:  1200.00,
-    imageUrl: 'https://img.vawoo.com/images/thumbnails/340/370/detailed/43/Z-Tank.jpg',
+    image: 'https://img.vawoo.com/images/thumbnails/340/370/detailed/43/Z-Tank.jpg',
   },
   {
     id: 'tank2',
-    name: 'Vaporesso iTank T',
+    title: 'Vaporesso iTank T',
     price:  1150.00,
-    imageUrl: 'https://cdn.vapeclub.co.uk/img/products/vaporesso-itank-t_2.jpg',
+    image: 'https://cdn.vapeclub.co.uk/img/products/vaporesso-itank-t_2.jpg',
   },
   {
     id: 'tank3',
-    name: 'Aspire Nautilus 3',
+    title: 'Aspire Nautilus 3',
     price: 950.00,
-    imageUrl: 'https://www.aspireeciguk.co.uk/image/cache/catalog/Aspire%20avp%20cube/Aspire-Nautilus-3-tank-uk-800x800.jpg',
+    image: 'https://www.aspireeciguk.co.uk/image/cache/catalog/Aspire%20avp%20cube/Aspire-Nautilus-3-tank-uk-800x800.jpg',
   },
   {
     id: 'tank4',
-    name: 'SMOK TFV18',
+    title: 'SMOK TFV18',
     price:  1300.00,
-    imageUrl: 'https://www.vapewholesaleglobal.com/cdn/shop/products/SMOK-TFV18-Mini-Tank-6.jpg?v=1661224864&width=1445',
+    image: 'https://www.vapewholesaleglobal.com/cdn/shop/products/SMOK-TFV18-Mini-Tank-6.jpg?v=1661224864&width=1445',
   },
   {
     id: 'tank5',
-    name: 'Uwell Valyrian 2 Pro',
+    title: 'Uwell Valyrian 2 Pro',
     price:  1250.00,
-    imageUrl: 'https://vapebeat.com/wp-content/uploads/2021/07/uwell-valyrian-2.jpg',
+    image: 'https://vapebeat.com/wp-content/uploads/2021/07/uwell-valyrian-2.jpg',
   },
   {
     id: 'tank6',
-    name: 'Freemax Mesh Pro',
+    title: 'Freemax Mesh Pro',
     price: 1100.00,
-    imageUrl: 'https://www.bigdvapor.net/cdn/shop/products/Freemax-Mesh-Pro-Tank-Kit-with-2-Coils-and-Replacement-Glass-4.png?v=1700525115',
+    image: 'https://www.bigdvapor.net/cdn/shop/products/Freemax-Mesh-Pro-Tank-Kit-with-2-Coils-and-Replacement-Glass-4.png?v=1700525115',
   },
   {
     id: 'tank7',
-    name: 'Horizon Falcon King',
+    title: 'Horizon Falcon King',
     price: 1180.00,
-    imageUrl: 'https://admin.elementvape.com/media/catalog/product/h/o/horizon_falcon_king_mesh_sub-ohm_tank_1.jpg',
+    image: 'https://admin.elementvape.com/media/catalog/product/h/o/horizon_falcon_king_mesh_sub-ohm_tank_1.jpg',
   },
   {
     id: 'tank8',
-    name: 'Voopoo PnP Tank',
+    title: 'Voopoo PnP Tank',
     price: 980.00,
-    imageUrl: 'https://cdn.vapeclub.co.uk/img/products/voopoo-pnp-pod-tank_10.jpg',
+    image: 'https://cdn.vapeclub.co.uk/img/products/voopoo-pnp-pod-tank_10.jpg',
   },
 ];
 
@@ -62,7 +63,7 @@ export default function TanksList() {
     await new Promise((res) => setTimeout(res, 700));
     addToCart(tank);
     setLoadingId(null);
-    toast.success(`${tank.name} added to cart!`);
+    toast.success(`${tank.title} added to cart!`);
   };
 
   return (
@@ -75,16 +76,19 @@ export default function TanksList() {
             key={tank.id}
             className="bg-[#111] p-4 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300 flex flex-col"
           >
-            
+           <Link
+  to={`/product/${tank.id}`}
+  state={{ productsArray: tanks }}
+>
             <img
-              src={tank.imageUrl}
-              alt={tank.name}
+              src={tank.image}
+              alt={tank.title}
               className="mx-auto mb-4 h-48 w-full object-contain"
               loading="lazy"
             />
-           
+           </Link>
             <div className="text-left flex-1">
-              <h3 className="text-xl font-semibold mb-2">{tank.name}</h3>
+              <h3 className="text-xl font-semibold mb-2">{tank.title}</h3>
               <p className="text-[#FD0000] font-semibold text-lg">{tank.price} EGP</p>
             </div>
 

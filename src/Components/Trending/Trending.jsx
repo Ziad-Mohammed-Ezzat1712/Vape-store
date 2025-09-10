@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../../Context/CartContext1.jsx';
 import img1 from '../../../images/prod1.png';
+import { Link } from 'react-router-dom';
 
 const trendingProducts = [
   {
@@ -162,11 +163,16 @@ export default function Trending() {
             key={product.id}
             className="bg-[#111] p-4 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300 flex flex-col"
           >
+            <Link 
+  to={`/product/${product.id}`}
+  state={{ productsArray: trendingProducts }}  
+>
             <img
               src={product.image}
               alt={product.title}
               className="mx-auto mb-4 h-80 object-contain"
             />
+            </Link>
             <div className="text-left flex-grow">
               <h4 className="text-sm text-gray-400 mb-2">{product.brand}</h4>
               <p className="text-base text-white font-medium mb-2 line-clamp-2">{product.title}</p>

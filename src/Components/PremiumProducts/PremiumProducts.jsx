@@ -2,65 +2,67 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useCart } from '../../Context/CartContext1.jsx';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+Link
 const products = [
   {
     id: 1,
-    name: 'Strawberry Burst',
+    title: 'Strawberry Burst',
     price: 14.99,
     image: 'https://vapekit.co.uk/images/strawberry-burst-nic-salt-e-liquid-original-series-10ml-p8845-21842_image.jpg',
     rating: 4,
   },
   {
     id: 2,
-    name: 'Minty Fresh',
+    title: 'Minty Fresh',
     price: 12.49,
     image: 'https://cdn.vapeclub.co.uk/img/products/fresh-mint-e-liquid-by-hayati-pro-max-nic-salts_4.jpg',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Vanilla Dream',
+    title: 'Vanilla Dream',
     price: 16.75,
     image: 'https://m.media-amazon.com/images/I/61Ks3EhzL-S._UF1000,1000_QL80_.jpg',
     rating: 3,
   },
    {
     id: 1,
-    name: 'Strawberry Burst',
+    title: 'Strawberry Burst',
     price: 14.99,
     image: 'https://vapekit.co.uk/images/strawberry-burst-nic-salt-e-liquid-original-series-10ml-p8845-21842_image.jpg',
     rating: 4,
   },
   {
     id: 2,
-    name: 'Minty Fresh',
+    title: 'Minty Fresh',
     price: 12.49,
     image: 'https://cdn.vapeclub.co.uk/img/products/fresh-mint-e-liquid-by-hayati-pro-max-nic-salts_4.jpg',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Vanilla Dream',
+    title: 'Vanilla Dream',
     price: 16.75,
     image: 'https://m.media-amazon.com/images/I/61Ks3EhzL-S._UF1000,1000_QL80_.jpg',
     rating: 3,
   }, {
     id: 1,
-    name: 'Strawberry Burst',
+    title: 'Strawberry Burst',
     price: 14.99,
     image: 'https://vapekit.co.uk/images/strawberry-burst-nic-salt-e-liquid-original-series-10ml-p8845-21842_image.jpg',
     rating: 4,
   },
   {
     id: 2,
-    name: 'Minty Fresh',
+    title: 'Minty Fresh',
     price: 12.49,
     image: 'https://cdn.vapeclub.co.uk/img/products/fresh-mint-e-liquid-by-hayati-pro-max-nic-salts_4.jpg',
     rating: 5,
   },
   {
     id: 3,
-    name: 'Vanilla Dream',
+    title: 'Vanilla Dream',
     price: 16.75,
     image: 'https://m.media-amazon.com/images/I/61Ks3EhzL-S._UF1000,1000_QL80_.jpg',
     rating: 3,
@@ -76,7 +78,7 @@ const [loadingId, setLoadingId] = useState(null); // لتحديد أي زر عل
       await new Promise((res) => setTimeout(res, 700)); // محاكاة لودينج واقعي
       addToCart(products);
       setLoadingId(null);
-      toast.success(`${products.name} added to cart!`);
+      toast.success(`${products.title} added to cart!`);
     };
   return (
     <div className="bg-black text-white py-12 px-4 md:px-10">
@@ -87,12 +89,17 @@ const [loadingId, setLoadingId] = useState(null); // لتحديد أي زر عل
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
           <div key={product.id} className="bg-[#1a1a1a] rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300">
+             <Link 
+                         to={`/product/${product.id}`}
+                         state={{ productsArray: products  }}  
+                       >
             <img
               src={product.image}
-              alt={product.name}
+              alt={product.title}
               className="w-full h-80 object-contain rounded-md mb-4"
             />
-            <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+            </Link>
+            <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
             <p className="text-gray-300 mb-2">${product.price.toFixed(2)}</p>
             <div className="flex items-center mb-4">
               {[...Array(5)].map((_, i) => (

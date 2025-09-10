@@ -2,67 +2,68 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useCart } from '../../Context/CartContext1.jsx';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const devices = [
   {
     id: 1,
-    name: 'Smok Nord 4',
+    title: 'Smok Nord 4',
     price: 39.99,
     image: 'https://capital-vape.com/wp-content/uploads/2023/02/%D8%AA%D9%86%D8%B2%D9%8A%D9%84-2023-02-13T205729.766.jpg',
     rating: 4,
   },
   {
     id: 2,
-    name: 'Voopoo Drag X',
+    title: 'Voopoo Drag X',
     price: 49.99,
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-yrzl6GlybFMSHMGj1OcwV3VFpDHy12vVMA&s',
     rating: 5,
   },
   {
     id: 3,
-    name: 'GeekVape Aegis Legend',
+    title: 'GeekVape Aegis Legend',
     price: 59.99,
     image: 'https://www.vapestore.co.uk/cdn/shop/files/geekvape-aegis-legend-2-black.jpg?v=1729041429',
     rating: 4,
   },
   {
     id: 4,
-    name: 'Smok Nord 4',
+    title: 'Smok Nord 4',
     price: 39.99,
     image: 'https://capital-vape.com/wp-content/uploads/2023/02/%D8%AA%D9%86%D8%B2%D9%8A%D9%84-2023-02-13T205729.766.jpg',
     rating: 4,
   },
   {
     id: 5,
-    name: 'Voopoo Drag X',
+    title: 'Voopoo Drag X',
     price: 49.99,
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-yrzl6GlybFMSHMGj1OcwV3VFpDHy12vVMA&s',
     rating: 5,
   },
   {
     id: 6,
-    name: 'GeekVape Aegis Legend',
+    title: 'GeekVape Aegis Legend',
     price: 59.99,
     image: 'https://www.vapestore.co.uk/cdn/shop/files/geekvape-aegis-legend-2-black.jpg?v=1729041429',
     rating: 4,
   },
   {
     id: 7,
-    name: 'Smok Nord 4',
+    title: 'Smok Nord 4',
     price: 39.99,
     image: 'https://capital-vape.com/wp-content/uploads/2023/02/%D8%AA%D9%86%D8%B2%D9%8A%D9%84-2023-02-13T205729.766.jpg',
     rating: 4,
   },
   {
     id: 8,
-    name: 'Voopoo Drag X',
+    title: 'Voopoo Drag X',
     price: 49.99,
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-yrzl6GlybFMSHMGj1OcwV3VFpDHy12vVMA&s',
     rating: 5,
   },
   {
     id: 9,
-    name: 'GeekVape Aegis Legend',
+    title: 'GeekVape Aegis Legend',
     price: 59.99,
     image: 'https://www.vapestore.co.uk/cdn/shop/files/geekvape-aegis-legend-2-black.jpg?v=1729041429',
     rating: 4,
@@ -81,7 +82,7 @@ export default function VapingDevices() {
     await new Promise((res) => setTimeout(res, 700)); // محاكاة لودينج واقعي
     addToCart(device);
     setLoadingId(null);
-    toast.success(`${device.name} added to cart!`);
+    toast.success(`${device.title} added to cart!`);
   };
 
   return (
@@ -96,12 +97,17 @@ export default function VapingDevices() {
             key={device.id}
             className="bg-[#1a1a1a] rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300"
           >
+            <Link
+  to={`/product/${device.id}`}
+  state={{ productsArray: devices }}
+>
             <img
               src={device.image}
-              alt={device.name}
+              alt={device.title}
               className="w-full h-80 object-contain rounded-md mb-4"
             />
-            <h3 className="text-xl font-semibold mb-2">{device.name}</h3>
+            </Link>
+            <h3 className="text-xl font-semibold mb-2">{device.title}</h3>
             <p className="text-gray-300 mb-2">${device.price.toFixed(2)}</p>
             <div className="flex justify-center mb-4">
               {[...Array(5)].map((_, i) => (

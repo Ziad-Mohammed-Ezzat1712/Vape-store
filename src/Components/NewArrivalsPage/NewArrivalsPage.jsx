@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useCart } from '../../Context/CartContext1.jsx';
-
 import 'react-toastify/dist/ReactToastify.css';
 import img5 from '../../../images/img5.png';
 import img6 from '../../../images/img6.png';
 import img7 from '../../../images/img7.png';
 import img8 from '../../../images/img8.png';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 export default function NewArrivalsPage() {
   const { addToCart } = useCart();
@@ -39,7 +39,12 @@ export default function NewArrivalsPage() {
             key={product.id}
             className="bg-[#111] p-4 rounded-lg border border-gray-700 hover:shadow-lg transition duration-300"
           >
+             <Link 
+                         to={`/product/${product.id}`}
+                         state={{ productsArray: products  }}  
+                       >
             <img src={product.image} alt={product.title} className="mx-auto mb-4 h-48 object-contain" />
+           </Link>
             <div className="text-left mb-4">
               <h4 className="text-sm text-gray-400 mb-2">{product.brand}</h4>
               <p className="text-base text-white font-medium mb-2">{product.title}</p>
