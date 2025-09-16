@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import logo from "../../../public/logo.png";
+import logo from "../../../public/logo.svg";
 
 import { useCart } from '../../Context/CartContext1';
 import PromoSlider from '../CategoriesSlider/PromoSlider';
@@ -30,7 +30,7 @@ export default function Navbar() {
           <NavLink to='/'>
             <div className="w-full md:w-auto flex justify-center md:justify-start">
               <span className="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src={logo} className="h-12 w-auto" alt="Logo" />
+                <img src={logo} className="h-20  w-auto" alt="Logo" />
               </span>
             </div>
           </NavLink>

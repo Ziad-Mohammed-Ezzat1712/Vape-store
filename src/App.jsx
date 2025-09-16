@@ -85,7 +85,7 @@ let x = createBrowserRouter([
 
   ]},
 {
-    path: 'kareem',
+    path: 'admin',
     element: <DashboardLayout /> ,
     children: [
       { path: 'products', element: <ProductsDashboard /> }

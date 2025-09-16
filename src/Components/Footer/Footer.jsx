@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../public/logo.png';
+import logo from '../../../public/logo.svg';
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo */}
           <div className="flex flex-col gap-4 items-start">
-            <img src={logo} alt="Logo" className="h-20 w-40 object-contain" />
+            <img src={logo} alt="Logo" className="h-28 w-40 object-contain" />
            
           </div>
 
